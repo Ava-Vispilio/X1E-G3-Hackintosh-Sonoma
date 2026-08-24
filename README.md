@@ -165,7 +165,7 @@ SecureBootModel was Default and blocked booting the installed volume. Set Misc �
 
 ---
 
-## 5. Copy OpenCore to the macOS SSD EFI (done)
+## 5. Copy OpenCore to the macOS SSD EFI
 
 Until this is done, pulling the USB means macOS will not boot. Confirm ids with `diskutil list` first (see “Mounting the macOS EFI”)
 
@@ -234,7 +234,7 @@ Byte order for SIP: full on is `00000000`. Disabled-style dump is `ff0f0000` as 
 
 ---
 
-## 6b. Bluetooth (done)
+## 6b. Bluetooth
 
 AX201 Wi-Fi stays off. After first boot, Kernel → Add was set back to true for `IntelBluetoothFirmware.kext` and `BlueToolFixup.kext`. BIOS wireless/BT on
 
@@ -250,7 +250,7 @@ EFI already had: `SSDT-PLUG-DRTNIA` + `CPUFriend` / `CPUFriendDataProvider`, `NV
 
 ### Feature checklist (verify on the running Mac)
 
-**iGPU / WhateverGreen (stub A, done)**
+**iGPU / WhateverGreen**
 
 Install used WEG-off. After first boot, UHD 630 already had QE/CI from `AAPL,ig-platform-id` `00009B3E`. WEG was then enabled for Displays and brightness keys.
 
@@ -270,7 +270,7 @@ system_profiler SPDisplaysDataType
 
 Look for Intel UHD Graphics 630, Metal, VRAM well above 7 MB (this unit ~1536 MB). Brightness keys should change the panel. System Settings → Displays section in settings should not be blank
 
-**USB map (stub B, done)**
+**USB map**
 
 Stock repo `UTBMap.kext` was PCH Type-A + internals only. USB-C is split (USB 2 on PCH, USB 3 on TB XHCI). Mapped on **native Windows** (F12 → Windows Boot Manager) with [USBToolBox](https://github.com/USBToolBox/tool) `Windows.exe`. Companion binding on. Output filename **`UTBMap.kext`**. Old map: `~/Downloads/UTBMap.kext.old`. Copied over `EFI/OC/Kexts/UTBMap.kext`. Left `USBToolBox.kext`. `XhciPortLimit` stays false. Do not add `UTBDefault.kext`
 
@@ -287,7 +287,7 @@ Ports: `1,4,5,6,8,14,17,22,29,30`
 
 **Verify:** plug a stick into both USB-A and both USB-C (both orientations). Camera in Photo Booth. T3U still connects
 
-**Sleep (stub C, done)**
+**Sleep**
 
 Lid close, Apple menu Sleep, and wake work. Re-test after any USB map change
 
@@ -299,7 +299,7 @@ Lid close, Apple menu Sleep, and wake work. Re-test after any USB map change
 
 ---
 
-### Stub D — Apple ID / iMessage / FaceTime (done)
+### Apple ID / iMessage / FaceTime
 
 [Dortania iServices](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html).
 
@@ -332,7 +332,7 @@ If `ok` is missing after reboot, fix [emulated NVRAM](https://dortania.github.io
 
 About This Mac serial → [Apple Check Coverage](https://checkcoverage.apple.com/). **Invalid / unable to check coverage is the good result** (unused fake Mac). Do **not** generate a new serial. A real purchase date would mean GenSMBIOS for MacBookPro16,1 and a new MLB/serial/UUID
 
-#### 3. NullEthernet for built-in en0 (this machine: done)
+#### 3. NullEthernet for built-in en0
 
 After deleting `NetworkInterfaces.plist` / `preferences.plist`, there was still no `en0`. T3U showed as `en1` (`50:3d:d1:da:56:3a`)
 
