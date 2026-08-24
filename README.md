@@ -1,10 +1,8 @@
-# ThinkPad X1 Extreme Gen 3 — Sonoma Hackintosh
+# ThinkPad X1 Extreme Gen 3 w/ Sonoma Hackintosh
 
 A working log for this machine, not a generic EFI dump. Follow the install sections as they were actually done. Daily use is in decent shape. Optional quality-of-life items are at the end!
 
 > Note that I used the debug version of OpenCore throughout, for easier troubleshooting. It is recommended that you do the same and then swap to a non-debug version after the machine is stable!
-
-**Chat / copy-paste:** Terminal snippets in this file use `p.read_bytes()` with **no spaces**. Some chat apps rewrite that as `p.read (http://p.read/)_bytes()` or turn `ne.zip` into a URL. If a command fails with `command not found: #` or a bogus `http://`, type it by hand from here. Use `||` (two pipes) not a space before `echo` in `grep || echo`
 
 Hardware on this unit:
 
