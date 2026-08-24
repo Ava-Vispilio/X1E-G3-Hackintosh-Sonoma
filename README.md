@@ -242,7 +242,7 @@ AX201 Wi-Fi stays off. After first boot, Kernel → Add was set back to true for
 
 ---
 
-## 7. Post-install (current machine)
+## 7. Post-install
 
 Checked against [Dortania OpenCore Post-Install](https://dortania.github.io/OpenCore-Post-Install/). FileVault, DRM, and CFG-Lock unlock are **not** pursued. `SecureBootModel` stays **Disabled**. ScanPolicy can stay **0**. Keep `-v` on purpose
 
@@ -301,7 +301,7 @@ Lid close, Apple menu Sleep, and wake work. Re-test after any USB map change
 
 ### Apple ID / iMessage / FaceTime
 
-[Dortania iServices](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html).
+[Dortania iServices](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html) was used a refernece
 
 This chassis has **no PCI Ethernet**. The T3U is USB, so it is **not** a built-in `en0`. iMessage wants a built-in `en0`. Internet can (and should) stay on the T3U as `en1`
 
